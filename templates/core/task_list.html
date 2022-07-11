@@ -35,9 +35,9 @@
                         {{ tag.name }}
                     {% endfor %}
                 </span>
-                <a href="#">Update</a>
+                <a href="{% url 'core:task-update' pk=task.id %}">Update</a>
                 |
-                <a href="#">Delete</a>
+                <a href="{% url 'core:task-delete' pk=task.id %}">Delete</a>
             </p>
             <hr>
         {% endfor %}
