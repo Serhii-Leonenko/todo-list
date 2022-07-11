@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from django import forms
 
 from core.models import Tag, Task
@@ -10,7 +8,7 @@ class TaskForm(forms.ModelForm):
         queryset=Tag.objects.all(),
         widget=forms.CheckboxSelectMultiple
     )
-    deadline = forms.DateField(
+    deadline = forms.DateTimeField(
         widget=forms.widgets.DateTimeInput(
             attrs={'type': 'datetime-local'}
         ),
