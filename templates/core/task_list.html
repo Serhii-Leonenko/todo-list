@@ -15,10 +15,10 @@
                 <strong>{{ task.content }}
                     {% if task.is_done %}
                         <span class="text-success"> Done</span>
-                        <a style="float: right" class="btn btn-secondary" href="#">Undo</a>
+                        <a style="float: right" class="btn btn-secondary" href="{% url 'core:task-status-change' pk=task.id %}">Undo</a>
                     {% else %}
                         <span class="text-danger"> Not done</span>
-                        <a style="float: right" class="btn btn-success" href="#">Complete</a>
+                        <a style="float: right" class="btn btn-success" href="{% url 'core:task-status-change' pk=task.id %}">Complete</a>
                     {% endif %}
                 </strong>
             </p>
