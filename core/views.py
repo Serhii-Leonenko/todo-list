@@ -32,12 +32,17 @@ class TagListView(generic.ListView):
 
 
 class TagCreateView(generic.CreateView):
-    pass
+    model = Tag
+    success_url = reverse_lazy("core:tag-list")
+    fields = "__all__"
 
 
 class TagUpdateView(generic.UpdateView):
-    pass
+    model = Tag
+    success_url = reverse_lazy("core:tag-list")
+    fields = "__all__"
 
 
-class TagDeleteView(generic.UpdateView):
-    pass
+class TagDeleteView(generic.DeleteView):
+    model = Tag
+    success_url = reverse_lazy("core:tag-list")
