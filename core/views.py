@@ -9,6 +9,7 @@ from core.models import Task, Tag
 class TaskListView(generic.ListView):
     model = Task
     queryset = Task.objects.all().prefetch_related("tags")
+    paginate_by = 3
 
 
 class TaskCreateView(generic.CreateView):
@@ -42,6 +43,7 @@ def task_status_change(request, pk):
 
 class TagListView(generic.ListView):
     model = Tag
+    paginate_by = 3
 
 
 class TagCreateView(generic.CreateView):
